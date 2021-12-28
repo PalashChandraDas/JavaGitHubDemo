@@ -10,13 +10,13 @@ public class FibonacciSeries {
         int n = in.nextInt();
         int a = 0;
         int b = 1;
-        System.out.printf("%d %d ", a, b);
+        System.out.print("\n%d %d ", a, b);
 
         for (int i = 3; i <= n; i++) {
-            int fact = a + b;
+            int fibo = a + b;
             a = b;
-            b = fact;
-            System.out.printf("%d ", fact);
+            b = fibo;
+            System.out.print("%d ", fibo);
         }
     }
 }
