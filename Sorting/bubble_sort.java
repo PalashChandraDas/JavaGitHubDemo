@@ -1,41 +1,33 @@
 import java.util.Scanner;
-class AscendingNum {
+public class Ascending {
     public static void main(String[] args) {
-
-        int i, j, n;
-        
+        System.out.print("Enter the size of array: ");
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter the length of array: ");
-        n = in.nextInt();
+        int n = in.nextInt();
         int[] arr = new int[n];
-        
-        System.out.print("Enter some numbers in array: ");
-        for(i = 0; i < n; i++){
+
+        System.out.printf("Enter %d values in the array: ", n);
+        for(int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        
-        ascending_order(arr, n); //calling function here
-        
+
+        bubble_sort(arr, n);
     }
-    
-    
-    static void ascending_order(int[] arr, int n){
-        //using bubble_sort
+
+    static void bubble_sort(int[] arr, int n) {
         int i, j, temp;
-        for(i = 0; i < n; i++){
-            for(j = 0; j < n - i - 1; j++){
-                if(arr[j] > arr[j+1]){
-                    //swapping_here
+        for(i = 0; i < n - 1; i++) {
+            for(j = 0; j < n - i - 1; j++) {
+                if(arr[j] > arr[j+1]) {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
             }
         }
-        
         System.out.print("Sorted Ascending order: ");
-        for(i = 0; i < n; i++){
-             System.out.print(arr[i] + " ");
+        for(i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
